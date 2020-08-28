@@ -20,9 +20,9 @@ public class CategoriaResource {
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Categoria> listar(@PathVariable Integer id) {
 		Categoria obj = service.find(id);
-		
-		
 		return ResponseEntity.ok().body(obj);
 	}
+	
+	
 
 }

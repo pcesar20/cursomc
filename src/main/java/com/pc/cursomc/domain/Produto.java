@@ -13,6 +13,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name="tb_produto")
 public class Produto implements Serializable {
@@ -25,6 +27,7 @@ public class Produto implements Serializable {
 	private String nome;
 	private double preco;
 	
+	@JsonBackReference
 	@ManyToMany
 	@JoinTable(name="TB_PRODUTO_CAT",
 	joinColumns = @JoinColumn(name="produto_id"),
